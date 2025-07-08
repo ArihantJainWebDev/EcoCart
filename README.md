@@ -14,7 +14,7 @@ EcoCart/
 │   └── background.js  
   
 ├── dashboard/        → React Dashboard  
-|   ├── src/  
+ |   ├── src/  
 │      ├── pages/   
 │      └── components/    
   
