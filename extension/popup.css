@@ -1,0 +1,66 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #ecfdf5, #d1fae5);
+  font-family: 'Baloo 2', sans-serif;
+  color: #1f2937;
+  min-width: 320px;
+  max-width: 360px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+}
+
+.popup-container {
+  padding: 20px;
+  text-align: center;
+}
+
+.title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 22px;
+  margin-bottom: 4px;
+  color: #065f46;
+}
+
+.title span {
+  color: #16a34a;
+}
+
+.subtitle {
+  font-size: 14px;
+  margin-bottom: 16px;
+  color: #059669;
+}
+
+.description {
+  font-size: 14px;
+  text-align: left;
+  margin-bottom: 16px;
+}
+
+.description ul {
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.achievement {
+  font-size: 13px;
+  margin-bottom: 16px;
+  color: #7c3aed;
+}
+
+.start-btn {
+  background-color: #22c55e;
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.start-btn:hover {
+  background-color: #16a34a;
+}
