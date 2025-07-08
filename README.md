@@ -6,7 +6,7 @@ Most online shoppers are unaware of the environmental impact of the products the
 
 ---
 
-## 🛠️ Project Structure
+## 🛠️ Project Structure 
 EcoCart/  
 ├── extension/         → Chrome Extension (Vanilla HTML, CSS, JavaScript)  
 │   ├── popup.html  
