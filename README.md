@@ -8,14 +8,15 @@ Most online shoppers are unaware of the environmental impact of the products the
 
 ## 🛠️ Project Structure
 EcoCart/  
-├── extension/        → Chrome Extension  
+├── extension/        → Chrome Extension (Vanilla HTML, CSS and JavaScript) 
 │   ├── popup.html  
 │   ├── content.js  
 │   └── background.js  
   
-├── dashboard/        → React Dashboard  
-│   ├── pages/  
-│   └── components/  
+├── dashboard/        → React Dashboard 
+|   ├── src/ 
+│   |  ├── pages/  
+│   |  └── components/   
   
 ├── backend/          → Express Backend API  
 │   ├── routes/  
