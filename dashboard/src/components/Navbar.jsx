@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/Navbar.css'
+import SearchBar from './Searchbar'
 
 const Navbar = () => {
     return (
@@ -9,8 +9,7 @@ const Navbar = () => {
                     🌿 EcoCart
                 </div>
                 <div className="search-bar">
-                    <input type="text" placeholder="Search products or brands..." />
-                    <button className="search-button">🔍</button>
+                    <SearchBar />
                 </div>
                 <div className="user-menu">
                     <span className="user-greeting">Hello, Eco Warrior!</span>

@@ -1,9 +1,11 @@
 import React from 'react'
 import '../styles/Dashboard.css'
+import Navbar from '../components/Navbar'
 
 const Dashboard = () => {
     return (
         <>
+            <Navbar />
             <main className="main-content">
                 <section className="welcome-section">
                     <h1 className="welcome-title">Welcome back, Eco Warrior 🌱</h1>
