@@ -7,7 +7,7 @@ const Navbar = () => {
     return (
         <>
             <nav className="navbar">
-                <div className="logo" onClick={() => navigate('/dashboard')}>
+                <div className="logo" onClick={() => navigate('/')}>
                     🌿 EcoCart
                 </div>
                 <div className="search-bar">

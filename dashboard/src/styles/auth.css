@@ -27,8 +27,10 @@
 }
 
 .lottie-animation {
-   width: auto;
-   height: 80%;
+   width: 100%;
+   height: auto;
+   max-height: 200px;
+   object-fit: contain;
 }
 
 .auth-form-container {
@@ -106,5 +108,38 @@
 }
 
 .auth-form-container {
-  transition: all 0.3s ease-in-out;
+   transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 1200px) {
+   .form-container {
+      width: 65vw;
+      height: auto;
+   }
+}
+
+@media (max-width: 1000px) {
+   .form-container {
+      width: 80vw;
+      height: auto;
+   }
+}
+
+@media (max-width: 856px) {
+   .form-container {
+      width: 90vw;
+      height: auto;
+   }
+}
+
+@media (max-width: 700px){
+   .lottie-container {
+      display: none;
+   }
+
+   .auth-form-container {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+   }
 }

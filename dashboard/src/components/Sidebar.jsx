@@ -15,7 +15,7 @@ const Sidebar = ({ filters, setFilters }) => {
                 <h2>🔧 Filters & Sorting</h2>
                 <div className="filter-group">
                     <label>Sort By:</label>
-                    <select name="sort" onChange={handleChange}>
+                    <select name="sort" onChange={handleChange} value={filters.sort}>
                         <option value="">None</option>
                         <option value="ecoHigh">Eco Score ↑</option>
                         <option value="ecoLow">Eco Score ↓</option>

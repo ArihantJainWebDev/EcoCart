@@ -17,6 +17,8 @@
         justify-content: space-between;
         align-items: center;
         padding: 10px 100px;
+        position: fixed;
+        width: 100vw;
     }
 
     .logo {
@@ -88,9 +90,11 @@
     }
 
     .main-content {
-        padding: 1rem;
+        padding-inline: 1rem;
+        padding-bottom: 20px;
         max-width: 1200px;
         margin: auto;
+        padding-top: 100px;
     }
 
     .welcome-section {
