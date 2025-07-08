@@ -7,14 +7,21 @@ Most online shoppers are unaware of the environmental impact of the products the
 ---
 
 ## 🛠️ Project Structure
-EcoCart/
-│
-├── 📦 extension/    → Chrome Extension (popup, content script, background logic)
-│
-├── 📊 dashboard/    → React Dashboard (visual analytics, eco-score history)
-│
-├── 🧠 backend/      → Node.js + Express Backend (scoring logic, APIs, DB)
-│
-├── 📄 README.md     → Project documentation
-└── 🖼️  Ppt           → Project presentation slides
+EcoCart/  
+├── extension/        → Chrome Extension  
+│   ├── popup.html  
+│   ├── content.js  
+│   └── background.js  
+  
+├── dashboard/        → React Dashboard  
+│   ├── pages/  
+│   └── components/  
+  
+├── backend/          → Express Backend API  
+│   ├── routes/  
+│   └── controllers/  
+  
+├── README.md         → Project Documentation  
+└── Ppt/              → Presentation Slides  
+
 
