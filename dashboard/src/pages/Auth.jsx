@@ -1,21 +1,45 @@
+import React, { useState } from 'react'
 import Login from '../components/Login'
 import Register from '../components/Register'
-import Spline from '@splinetool/react-spline'
+import { DotLottieReact } from '@lottiefiles/dotlottie-react'
 import "../styles/auth.css"
 
 const Auth = () => {
+    const [isLogin, setIsLogin] = useState(true)
+
     return (
         <div className="auth-page">
-            <div className="spline-container">
-                <Spline
-        scene="https://prod.spline.design/ZNLgYvng7FZxsS0B/scene.splinecode" 
-      />
-            </div>
-            <div className="auth-form-container">
-                <h1 className="form-heading">Login</h1>
-                <p className="mt-4 text-sm">Already have an account?
-                    <button className="form-btn">Login here</button>
-                </p>
+            <div className="form-container">
+                {/* 👉 Lottie Animation */}
+                <div className="lottie-container">
+                    <DotLottieReact
+                        src="https://lottie.host/58578c48-cc58-4080-a463-af9e698c0dff/NSGsPOTbEB.lottie"
+                        loop
+                        autoplay
+                        className='lottie-animation'
+                    />
+                </div>
+
+                {/* 👉 Auth Form Section */}
+                <div className="auth-form-container">
+                    <h1 className="form-heading">
+                        {isLogin ? "Login" : "Register"}
+                    </h1>
+
+                    {isLogin ? <Login /> : <Register />}
+
+                    <p className="mt-4 text-sm">
+                        {isLogin
+                            ? "Don't have an account?"
+                            : "Already have an account?"}{" "}
+                        <button
+                            className="form-link-btn"
+                            onClick={() => setIsLogin(!isLogin)}
+                        >
+                            {isLogin ? "Register here" : "Login here"}
+                        </button>
+                    </p>
+                </div>
             </div>
         </div>
     )
