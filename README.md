@@ -13,10 +13,10 @@ EcoCart/
 │   ├── content.js  
 │   └── background.js  
   
-├── dashboard/        → React Dashboard 
+├── dashboard/        → React Dashboard  
 |   ├── src/  
-│   |  ├── pages/   
-│   |  └── components/    
+│      ├── pages/   
+│      └── components/    
   
 ├── backend/          → Express Backend API  
 │   ├── routes/  
