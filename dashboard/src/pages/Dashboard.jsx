@@ -16,7 +16,6 @@ const Dashboard = () => {
         </section>
 
         <div className="dashboard-grid">
-          {/* Eco Impact */}
           <section className="card">
             <h2 className="card-title">📈 Your Eco Impact</h2>
             <div className="eco-stats">
@@ -33,7 +32,6 @@ const Dashboard = () => {
             </div>
           </section>
 
-          {/* Quick Actions */}
           <section className="card">
             <h2 className="card-title">🔍 Quick Actions</h2>
             <div className="eco-stats">
@@ -50,7 +48,6 @@ const Dashboard = () => {
             </div>
           </section>
 
-          {/* Scan History */}
           <section className="card products-section">
             <h2 className="card-title">🔃 Recently Scanned Products</h2>
             <div className="products-list">

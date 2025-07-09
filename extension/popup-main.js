@@ -136,7 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       sendResponse({ status: "UI updated" });
     }
-    return true; // 👈 Keep this to allow async sendResponse
+    return true;
   });
 
   if (scanBtn) {
@@ -152,10 +152,10 @@ document.addEventListener("DOMContentLoaded", () => {
           { action: "SCAN_PRODUCT" },
           (response) => {
             if (chrome.runtime.lastError) {
-              console.error("❌ Content script error:", chrome.runtime.lastError.message);
-              alert("⚠️ Cannot scan this page. Try a shopping product page instead.");
+              console.error("Content script error:", chrome.runtime.lastError.message);
+              alert("Cannot scan this page. Try a shopping product page instead.");
             } else {
-              console.log("✅ Scan request sent");
+              console.log("Scan request sent");
             }
           }
         );

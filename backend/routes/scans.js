@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const Scan = require('../models/scan');
 
-// POST /api/scans/add → Save a scan
 router.post('/add', async (req, res) => {
   try {
     const scan = new Scan(req.body);
@@ -13,7 +12,6 @@ router.post('/add', async (req, res) => {
   }
 });
 
-// GET /api/scans → Get all scans
 router.get('/', async (req, res) => {
   try {
     const scans = await Scan.find().sort({ date: -1 });

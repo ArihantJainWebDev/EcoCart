@@ -1,7 +1,6 @@
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   const { action, title } = message;
 
-  // Handle productScanned
   if (action === "productScanned") {
     const productTitle = title;
     const normalized = (productTitle || "").trim().toLowerCase();
@@ -12,7 +11,6 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       let allProducts = result.scannedProducts || {};
       let ecoData = allProducts[normalized];
 
-      // If not found, generate and store
       if (!ecoData) {
         ecoData = {
           title: productTitle,
@@ -24,11 +22,9 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
           reward: Math.floor(Math.random() * 5 + 3)
         };
 
-        // Save locally
         allProducts[normalized] = ecoData;
         chrome.storage.local.set({ scannedProducts: allProducts });
 
-        // 🔁 Send to Railway backend
         fetch("https://mongodb-production-8dd8.up.railway.app/api/scans/add", {
           method: "POST",
           headers: {
@@ -41,7 +37,6 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
         .catch(err => console.error("❌ Backend error:", err));
       }
 
-      // Send data to content script
       if (sender.tab && sender.tab.id) {
         chrome.tabs.sendMessage(sender.tab.id, {
           action: "showEcoScore",
@@ -50,7 +45,6 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
         });
       }
 
-      // Optional: send to popup
       chrome.runtime.sendMessage({
         action: "showEcoScore",
         ecoData,
@@ -60,15 +54,14 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       sendResponse({ success: true, ecoData });
     });
 
-    return true; // Keeps message channel open
+    return true;
   }
 
-  // Handle dashboard's request
   if (action === "getScannedProducts") {
     chrome.storage.local.get(["scannedProducts"], (result) => {
       sendResponse({ data: result.scannedProducts || {} });
     });
 
-    return true; // Required for async response
+    return true;
   }
 });

@@ -10,7 +10,6 @@ const Auth = () => {
     return (
         <div className="auth-page">
             <div className="form-container">
-                {/* 👉 Lottie Animation */}
                 <div className="lottie-container">
                     <DotLottieReact
                         src="https://lottie.host/58578c48-cc58-4080-a463-af9e698c0dff/NSGsPOTbEB.lottie"
@@ -20,7 +19,6 @@ const Auth = () => {
                     />
                 </div>
 
-                {/* 👉 Auth Form Section */}
                 <div className="auth-form-container">
                     <h1 className="form-heading">
                         {isLogin ? "Login" : "Register"}

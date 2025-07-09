@@ -8,7 +8,6 @@ require("dotenv").config();
 const app = express();
 const port = process.env.PORT || 5000;
 
-// Middleware
 app.use(cors({
   origin: ["http://localhost:5173", "https://your-production-frontend.com"],
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
@@ -22,11 +21,10 @@ app.get("/cors-test", (req, res) => {
   res.send("CORS is working!");
 });
 
-// MongoDB Connection
 mongoose
   .connect(process.env.MONGO_URI)
-  .then(() => console.log("✅ MongoDB connected via Railway"))
-  .catch((err) => console.error("❌ MongoDB connection error:", err));
+  .then(() => console.log("MongoDB connected via Railway"))
+  .catch((err) => console.error("MongoDB connection error:", err));
 
 // MongoDB Schemas
 const userSchema = new mongoose.Schema({
@@ -54,7 +52,6 @@ const publicScanSchema = new mongoose.Schema({
 });
 const PublicScan = mongoose.model("PublicScan", publicScanSchema);
 
-// 🔐 Signup
 app.post("/api/signup", async (req, res) => {
   const { email, password } = req.body;
   const exists = await User.findOne({ email });
@@ -68,7 +65,6 @@ app.post("/api/signup", async (req, res) => {
   res.json({ token });
 });
 
-// 🔐 Login
 app.post("/api/login", async (req, res) => {
   const { email, password } = req.body;
   const user = await User.findOne({ email });
@@ -80,7 +76,6 @@ app.post("/api/login", async (req, res) => {
   res.json({ token });
 });
 
-// 🔒 Authenticated Scan Save
 app.post("/api/scan", async (req, res) => {
   const token = req.headers.authorization?.split(" ")[1];
   if (!token) return res.status(401).json({ error: "No token provided" });
@@ -102,7 +97,6 @@ app.post("/api/scan", async (req, res) => {
   }
 });
 
-// 📜 Get Scan History (Auth)
 app.get("/api/history", async (req, res) => {
   const token = req.headers.authorization?.split(" ")[1];
   if (!token) return res.status(401).json({ error: "No token provided" });
@@ -116,7 +110,6 @@ app.get("/api/history", async (req, res) => {
   }
 });
 
-// 🌿 Save Public Scan (No auth - used by extension)
 app.post("/api/public-scan", async (req, res) => {
   const { title, score, reward, carbon, plastic, chemicals } = req.body;
 
@@ -128,7 +121,6 @@ app.post("/api/public-scan", async (req, res) => {
   }
 });
 
-// 📋 Get Public Scan History
 app.get("/api/public-history", async (req, res) => {
   try {
     const scans = await PublicScan.find().sort({ date: -1 });
@@ -138,13 +130,12 @@ app.get("/api/public-history", async (req, res) => {
   }
 });
 
-// 🔁 Generate Dummy Eco Score
 app.get("/api/score", (req, res) => {
   const { title } = req.query;
 
   if (!title) return res.status(400).json({ error: "Product title is required" });
 
-  const score = Math.floor(Math.random() * 30) + 60; // Score between 60–89
+  const score = Math.floor(Math.random() * 30) + 60;
   const carbon = (Math.random() * 3 + 0.5).toFixed(2) + " kg CO₂";
   const plastic = Math.floor(Math.random() * 100 + 10) + "g";
   const chemicals = ["Low", "Moderate", "High", "None"][Math.floor(Math.random() * 4)];
@@ -160,7 +151,6 @@ app.get("/api/score", (req, res) => {
   });
 });
 
-// 🌐 Root
 app.get("/", (req, res) => {
   res.send("🌱 EcoCart backend is running!");
 });

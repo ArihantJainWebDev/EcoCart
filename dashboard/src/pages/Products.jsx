@@ -5,7 +5,6 @@ import Navbar from '../components/Navbar'
 import productsData from '../data/productsData'
 import '../styles/products.css'
 
-// Parse query param
 const useQuery = () => {
   return new URLSearchParams(useLocation().search)
 }
@@ -20,12 +19,10 @@ const Products = () => {
     platform: ''
   })
 
-  // Filter by search term
   let filteredProducts = productsData.filter(p =>
     p.title.toLowerCase().includes(searchTerm)
   )
 
-  // Apply filters
   if (filters.chemicals) {
     filteredProducts = filteredProducts.filter(p => p.chemicals === filters.chemicals)
   }
@@ -33,7 +30,6 @@ const Products = () => {
     filteredProducts = filteredProducts.filter(p => p.platform === filters.platform)
   }
 
-  // Apply sorting
   if (filters.sort === 'ecoHigh') {
     filteredProducts.sort((a, b) => b.ecoScore - a.ecoScore)
   } else if (filters.sort === 'ecoLow') {

@@ -17,9 +17,9 @@ document.getElementById('register-form').addEventListener('submit', async (e) =>
         window.location.href = 'popup-main.html';
       });
     } else {
-      document.getElementById('register-status').innerText = '❌ ' + (data.error || 'Signup failed');
+      document.getElementById('register-status').innerText = (data.error || 'Signup failed');
     }
   } catch (err) {
-    document.getElementById('register-status').innerText = '❌ Network error';
+    document.getElementById('register-status').innerText = 'Network error';
   }
 });
