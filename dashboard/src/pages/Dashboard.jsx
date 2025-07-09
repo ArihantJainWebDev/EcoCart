@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/Dashboard.css';
+import '../styles/dashboard.css';
 import Navbar from '../components/Navbar';
 
 const Dashboard = () => {
