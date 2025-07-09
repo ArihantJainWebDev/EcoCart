@@ -1,25 +1,25 @@
-console.log("EcoCart content script loaded:", window.location.href);
-
-function extractProductTitle() {
-  const selectors = ["#productTitle", ".product-title", "h1", ".title"];
-  for (let sel of selectors) {
-    const el = document.querySelector(sel);
-    if (el && el.innerText.trim()) {
-      return el.innerText.trim();
-    }
-  }
-  return null;
-}
-
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.action === "SCAN_PRODUCT") {
-    const title = extractProductTitle();
-    if (title) {
-      console.log("Product title found:", title);
-      chrome.runtime.sendMessage({ action: "productScanned", title });
+    let title = "";
+
+    // Try getting the product title from common shopping sites
+    if (document.querySelector("#productTitle")) {
+      title = document.querySelector("#productTitle").innerText.trim(); // Amazon
+    } else if (document.querySelector("h1")) {
+      title = document.querySelector("h1").innerText.trim(); // Fallback
     } else {
-      alert("Could not detect product title.");
+      title = document.title;
     }
+
+    console.log("🔍 Detected title:", title);
+
+    chrome.runtime.sendMessage({
+      action: "productScanned",
+      title
+    }, (response) => {
+      console.log("✅ Scan complete:", response);
+    });
+
+    sendResponse({ status: "ok", title });
   }
-  sendResponse({ status: "scanned" });
 });

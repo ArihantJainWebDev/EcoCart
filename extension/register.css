@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2&family=Orbitron&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #ecfdf5, #d1fae5);
+  font-family: 'Baloo 2', sans-serif;
+  color: #1f2937;
+  min-width: 320px;
+  max-width: 360px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  margin: auto;
+  padding-top: 30px;
+}
+
+.register-container {
+  padding: 24px;
+  text-align: center;
+}
+
+.register-container h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 22px;
+  color: #065f46;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+input {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #d1fae5;
+  background-color: #f0fdf4;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  border-color: #22c55e;
+}
+
+button {
+  background-color: #22c55e;
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #16a34a;
+}
+
+a {
+  color: #059669;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+#register-status {
+  font-size: 13px;
+  color: #dc2626;
+  margin-top: 6px;
+}

@@ -58,11 +58,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const { title, score, carbon, plastic, chemicals } = data;
 
     let numericScore = parseInt(score);
-    if (isNaN(numericScore)) {
-      numericScore = Math.floor(Math.random() * 35) + 50;
-    } else {
-      numericScore = Math.max(40, Math.min(100, numericScore));
-    }
+    if (isNaN(numericScore)) numericScore = Math.floor(Math.random() * 35) + 50;
+    else numericScore = Math.max(40, Math.min(100, numericScore));
 
     let storage = JSON.parse(localStorage.getItem("ecoCartData")) || {
       count: 0,
@@ -71,14 +68,14 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     const normalizedTitle = normalizeTitle(title);
-    const wasAlreadyScanned = storage.scannedTitles.includes(normalizedTitle);
+    const alreadyScanned = storage.scannedTitles.includes(normalizedTitle);
+    const reward = Math.floor(numericScore / 10);
 
-    if (!wasAlreadyScanned && !isAlreadyScanned) {
+    if (!alreadyScanned && !isAlreadyScanned) {
       storage.count += 1;
       storage.scannedTitles.push(normalizedTitle);
-      const reward = Math.floor(numericScore / 10);
       storage.totalReward += reward;
-    } else if (wasAlreadyScanned) {
+    } else {
       showAlert("✅ This product has already been scanned before!");
     }
 
@@ -125,25 +122,43 @@ document.addEventListener("DOMContentLoaded", () => {
     return newData;
   }
 
-  chrome.runtime.onMessage.addListener((msg) => {
+  chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
     if (msg.action === "showEcoScore") {
       const { ecoData, title } = msg;
-      const rawScore = ecoData.score;
+
       const usedTitle = title || ecoData.title || "Unknown Product";
       const normalizedTitle = normalizeTitle(usedTitle);
-
-      const storedData = getOrGenerateEcoData(usedTitle, ecoData);
       const scannedTitles = JSON.parse(localStorage.getItem("ecoCartData"))?.scannedTitles || [];
       const alreadyScanned = scannedTitles.includes(normalizedTitle);
 
-      updateUI(storedData, alreadyScanned);
+      const finalData = getOrGenerateEcoData(usedTitle, ecoData);
+      updateUI(finalData, alreadyScanned);
+
+      sendResponse({ status: "UI updated" });
     }
+    return true; // 👈 Keep this to allow async sendResponse
   });
 
   if (scanBtn) {
     scanBtn.addEventListener("click", () => {
       chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-        chrome.tabs.sendMessage(tabs[0].id, { action: "SCAN_PRODUCT" });
+        if (!tabs.length) {
+          alert("No active tab found");
+          return;
+        }
+
+        chrome.tabs.sendMessage(
+          tabs[0].id,
+          { action: "SCAN_PRODUCT" },
+          (response) => {
+            if (chrome.runtime.lastError) {
+              console.error("❌ Content script error:", chrome.runtime.lastError.message);
+              alert("⚠️ Cannot scan this page. Try a shopping product page instead.");
+            } else {
+              console.log("✅ Scan request sent");
+            }
+          }
+        );
       });
     });
   }
