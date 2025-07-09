@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import SearchBar from './Searchbar';
+import SearchBar from './SearchBar';
 import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
