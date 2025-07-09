@@ -1,8 +1,10 @@
 import React from 'react';
 import '../styles/dashboard.css';
 import Navbar from '../components/Navbar';
+import { useNavigate } from 'react-router-dom';
 
 const Dashboard = () => {
+  const navigate = useNavigate();
 
   return (
     <>
@@ -19,7 +21,7 @@ const Dashboard = () => {
           <p className="redeem-description">
             You have <strong>69 Eco Points</strong> available. Redeem them for eco-friendly products and rewards!
           </p>
-          <a href="/redeem" className="redeem-button">Redeem Now</a>
+          <button className="redeem-button" onClick={() => navigate('/redeem')}>Redeem Now</button>
         </section>
 
         <div className="dashboard-grid">
