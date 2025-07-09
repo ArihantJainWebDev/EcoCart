@@ -4,17 +4,17 @@ Welcome to the **EcoCart Dashboard** — an eco-awareness dashboard that tracks 
 
 ---
 
-## 🚀 Features
+## # Features
 
-- 🧾 View eco-score and scan history (Chrome Extension integration)
-- 🎁 Redeem eco-friendly rewards and digital vouchers
-- 📊 Track total points and rewards earned
-- 🌐 Fully responsive UI with modern design
-- 🔒 Secure backend API (Node.js + MongoDB)
+- View eco-score and scan history (Chrome Extension integration)
+- Redeem eco-friendly rewards and digital vouchers
+- Track total points and rewards earned
+- Fully responsive UI with modern design
+- Secure backend API (Node.js + MongoDB)
 
 ---
 
-## 📂 Project Structure
+## # Project Structure
 
 ```bash
 EcoCart/
