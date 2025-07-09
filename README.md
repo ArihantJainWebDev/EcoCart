@@ -60,6 +60,34 @@ EcoCart/
 - Render for backend
 - vercel for dashboard 
 
+---
+
+## # File structure of extension
+
+```bash
+extension/
+├── background.js               # Handles storage, sync, and extension logic
+├── content.js                  # Extracts product data from the web page
+├── manifest.json               # Chrome extension configuration
+├── popup.html                  # Base popup UI entry point
+├── popup.js                    # Controls popup logic
+├── popup.css                   # General popup styling
+
+# Login functionality
+├── popup-login.html            # Login page UI
+├── popup-login.js              # Login logic
+├── login.css                   # Login-specific styles
+
+# Registration functionality
+├── popup-register.html         # Registration page UI
+├── popup-register.js           # Registration logic
+├── register.css                # Registration-specific styles
+
+# Main Dashboard inside the extension
+├── popup-main.html             # Main popup dashboard UI
+├── popup-main.js               # JS logic for dashboard
+├── popup-main.css              # Styling for the dashboard
+```
 
 ---
 
