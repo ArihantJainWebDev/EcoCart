@@ -65,10 +65,6 @@ const rewards = [
 ];
 
 const Redeem = () => {
-  const handleRedeem = (item) => {
-    alert(`You have redeemed: ${item.name}`);
-  };
-
   return (
     <div className="redeem-page">
       <h2 className="redeem-title">Redeem Your Rewards</h2>
@@ -78,10 +74,7 @@ const Redeem = () => {
             <img src={item.image} alt={item.name} className="reward-image" />
             <h3>{item.name}</h3>
             <p>{item.points} Eco Points</p>
-            <button
-              className="redeem-button"
-              onClick={() => handleRedeem(item)}
-            >
+            <button className="redeem-button">
               Redeem
             </button>
           </div>
