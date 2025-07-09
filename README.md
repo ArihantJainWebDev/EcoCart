@@ -30,9 +30,7 @@ EcoCart/
 ├── backend/           # Express.js Backend
 
 
----
-
-## # Tech Stack
+## 🚀 Tech Stack
 
 **Frontend (Dashboard)**:
 - React.js
@@ -51,17 +49,18 @@ EcoCart/
 
 ---
 
-## # Screenshots
+## 📷 Screenshots
 
 > *(Add screenshots here if needed – UI preview, Redeem page, Dashboard etc.)*
 
 ---
 
-## # Getting Started (Local Setup)
+## 🧪 Getting Started (Local Setup)
 
 ### 1. Clone the repository
 
 ```bash
 git clone https://github.com/ArihantJainWebDev/EcoCart.git
 cd EcoCart/dashboard
+
 
