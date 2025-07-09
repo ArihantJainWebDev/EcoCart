@@ -60,3 +60,25 @@ EcoCart/
 - Render for backend
 - vercel for dashboard 
 
+
+---
+
+## 🧪 How to Use Locally
+
+1. **Download or Clone the Repo**
+
+```bash
+git clone https://github.com/ArihantJainWebDev/EcoCart.git
+cd EcoCart/extension
+```
+
+- Load in Chrome
+- Open Chrome and go to: chrome://extensions/
+- Enable Developer mode (top-right)
+- Click Load unpacked
+- Select the extension/ folder
+
+---
+
+# Author
+Made with 💚 by Arihant Jain
