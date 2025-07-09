@@ -14,6 +14,13 @@ const Dashboard = () => {
             Keep making a positive impact on our planet, one purchase at a time!
           </p>
         </section>
+        <section className='redeem-section'>
+          <h2 className="redeem-title">🎁 Redeem Your Eco Points</h2>
+          <p className="redeem-description">
+            You have <strong>69 Eco Points</strong> available. Redeem them for eco-friendly products and rewards!
+          </p>
+          <a href="/redeem" className="redeem-button">Redeem Now</a>
+        </section>
 
         <div className="dashboard-grid">
           <section className="card">
@@ -26,7 +33,7 @@ const Dashboard = () => {
               </div>
               <div className="stat-item">
                 <div className="stat-icon">💰</div>
-                <div className="stat-value">22</div>
+                <div className="stat-value">69</div>
                 <div className="stat-label">Total Points</div>
               </div>
             </div>
@@ -56,7 +63,7 @@ const Dashboard = () => {
                   <div className="product-info">
                     <h3 className="product-title">Eco-Friendly Shampoo</h3>
                     <p className="product-score">Eco Score: 85</p>
-                    <p className="product-reward">Reward: 5 points</p>
+                    <p className="product-reward">Reward: 17 points</p>
                   </div>
                 </div>
               </div>
@@ -64,21 +71,21 @@ const Dashboard = () => {
                 <div className="product-info">
                   <h3 className="product-title">Biodegradable Soap</h3>
                   <p className="product-score">Eco Score: 90</p>
-                  <p className="product-reward">Reward: 7 points</p>
+                  <p className="product-reward">Reward: 18 points</p>
                 </div>
               </div>
               <div className="product-item">
                 <div className="product-info">
                   <h3 className="product-title">Sustainable Toothbrush</h3>
                   <p className="product-score">Eco Score: 80</p>
-                  <p className="product-reward">Reward: 5 points</p>
+                  <p className="product-reward">Reward: 16 points</p>
                 </div>
               </div>
               <div className="product-item">
                 <div className="product-info">
                   <h3 className="product-title">Organic Cotton T-Shirt</h3>
                   <p className="product-score">Eco Score: 88</p>
-                  <p className="product-reward">Reward: 6 points</p>
+                  <p className="product-reward">Reward: 18 points</p>
                 </div>
               </div>
             </div>
