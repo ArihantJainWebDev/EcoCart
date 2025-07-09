@@ -28,9 +28,9 @@ EcoCart/
 │   ├── package.json
 │   └── README.md
 ├── backend/           # Express.js Backend
+```
 
-
-## 🚀 Tech Stack
+## # Tech Stack
 
 **Frontend (Dashboard)**:
 - React.js
@@ -47,11 +47,9 @@ EcoCart/
 - MongoDB (Atlas)
 - JWT for authentication
 
----
-
-## 📷 Screenshots
-
-> *(Add screenshots here if needed – UI preview, Redeem page, Dashboard etc.)*
+**Deployement**:
+- Render for backend
+- vercel for dashboard 
 
 ---
 
@@ -62,5 +60,5 @@ EcoCart/
 ```bash
 git clone https://github.com/ArihantJainWebDev/EcoCart.git
 cd EcoCart/dashboard
-
+```
 
