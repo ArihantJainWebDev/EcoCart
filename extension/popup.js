@@ -1,5 +1,8 @@
-var startBtn = document.getElementById("start-btn");
-
-startBtn.addEventListener("click", function () {
-    window.location.href = "popup-main.html";
+document.addEventListener("DOMContentLoaded", () => {
+  const startBtn = document.getElementById("start-btn");
+  if (startBtn) {
+    startBtn.addEventListener("click", () => {
+      window.location.href = "popup-main.html";
+    });
+  }
 });
