@@ -1,6 +1,6 @@
 import './App.css'
 import React from 'react'
-import Dashboard from './pages/dashboard'
+import Dashboard from './pages/Dashboard'
 import Auth from './pages/Auth'
 import Products from './pages/Products'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
