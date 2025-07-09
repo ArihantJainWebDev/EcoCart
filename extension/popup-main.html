@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <title>EcoCart - Dashboard</title>
   <link rel="stylesheet" href="popup-main.css" />
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet" />
 </head>
+
 <body>
   <div class="main-container">
     <h2 class="title">🌱 EcoCart Dashboard</h2>
 
-    <!-- Cart Status -->
     <div class="score-box">
       <div class="score-item">
         <p>🛒 <strong>Items Scanned:</strong> <span id="item-count">0</span></p>
@@ -23,29 +24,32 @@
       </div>
     </div>
 
-    <!-- Product Info -->
     <div class="product-box">
       <h3>🧾 Last Product Scanned</h3>
       <p><strong>Name:</strong> <span id="product-name">--</span></p>
-      <p><strong>Eco Grade:</strong> <span id="eco-grade">--</span></p>
       <p><strong>Carbon Footprint:</strong> <span id="carbon-footprint">--</span></p>
       <p><strong>Plastic Used:</strong> <span id="plastic-used">--</span></p>
       <p><strong>Harmful Chemicals:</strong> <span id="chemicals">--</span></p>
     </div>
 
-    <!-- Achievement Section -->
     <div id="achievement-box" class="achievement-box">
       🎯 <em>No achievements yet. Scan to unlock!</em>
     </div>
 
-    <!-- Buttons -->
     <div class="popup-buttons">
       <button class="scan-btn" id="scan-btn">🔄 Scan the product</button>
       <button class="dashboard-btn" id="dashboard-btn">📊 View Full Dashboard</button>
     </div>
   </div>
 
-  <!-- JS scripts -->
+  <div id="custom-alert" class="hidden">
+    <div class="alert-box">
+      <p id="alert-message">Default message</p>
+      <button id="alert-ok-btn">OK</button>
+    </div>
+  </div>
+
   <script src="popup-main.js" defer></script>
 </body>
+
 </html>
