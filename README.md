@@ -14,6 +14,15 @@ Welcome to the **EcoCart Dashboard** — an eco-awareness dashboard that tracks 
 
 ---
 
+## 🌐 Live Services
+
+- **Dashboard**: [EcoCart Dashboard (Deployed)](https://eco-cart-sand.vercel.app)
+- **API Backend**: Deployed on Render (or your backend host)
+
+You don't need to run the dashboard or backend locally — everything is already connected.
+
+---
+
 ## # Project Structure
 
 ```bash
@@ -50,15 +59,4 @@ EcoCart/
 **Deployement**:
 - Render for backend
 - vercel for dashboard 
-
----
-
-## 🧪 Getting Started (Local Setup)
-
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/ArihantJainWebDev/EcoCart.git
-cd EcoCart/dashboard
-```
 
